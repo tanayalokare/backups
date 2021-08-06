@@ -1,0 +1,105 @@
+<h3>get Text-Box value</h3>
+<input type="text" #inputTextVal />
+<button (click)="getVal(inputTextVal.value)">Get Value</button>
+<br />
+<div>{{ currentVal }}</div>
+
+<p>Property Binding and interpolation</p>
+<input type="text" name="" id="" value="tanaya" />
+
+<hr />
+<br />
+<div class="container">
+  <h3>Alert in bootstrap</h3>
+  <p>
+    <ngb-alert [dismissible]="false">
+      <strong>Warning!</strong> Better check yourself, you're not looking too
+      good.
+    </ngb-alert>
+  </p>
+  <button class="btn btn-primary">test button</button>
+
+  <hr />
+
+  <hr />
+
+  <h2>Dropdown example</h2>
+
+  <div class="row">
+    <div class="col">
+      <div ngbDropdown class="d-inline-block">
+        <button
+          class="btn btn-outline-primary"
+          id="dropdownBasic1"
+          ngbDropdownToggle
+        >
+          Toggle dropdown
+        </button>
+        <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+          <button ngbDropdownItem>Action - 1</button>
+          <button ngbDropdownItem>Another Action</button>
+          <button ngbDropdownItem>Something else is here</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <br /><br />
+  <hr />
+  <hr />
+  <h3>add angular material (Matbutton)</h3>
+  <button mat-button>MatButton</button>&nbsp;
+  <button mat-button color="warn">Accent</button>&nbsp;
+  <button mat-button color="accent">Accent</button>&nbsp;
+  <button mat-raised-button color="warn">Warn</button>&nbsp;
+  <button mat-raised-button disabled>Disabled</button>&nbsp;
+    <a mat-raised-button href="https://www.google.com/" target="_blank">Link</a>
+    <hr><br>
+    <h3>slider in angular</h3>
+    <mat-slider thumbLabel
+    [displayWith]="formatLabel"
+    tickInterval="1000"
+    step="1000"
+    min="0"
+    max="100000"
+    aria-label="units"></mat-slider>
+
+
+    <hr><br>
+    <h3>Pass data to child component</h3>
+    <!-- <app-child [hero] = "data"></app-child> -->
+    <app-child [heroTanaya] = "data1"></app-child>
+
+    <mat-divider></mat-divider>
+    <h3>Resuable component</h3>
+    <div *ngFor = "let item of reusableData">
+      <app-reusablechild [proprtyTanaya] = "item"></app-reusablechild>
+
+    </div>
+    <mat-divider></mat-divider>
+
+    <h1 style="color: blueviolet;">pass data child to parent component</h1>
+<app-childtest (parentComponent) = "parentComponenetFun($event)"></app-childtest>
+
+<br><br><br>
+<div *ngIf = "parentVal" style="background-color: beige;"> 
+  <!-- <p>Name is:: {{parentVal.name}} & {{parentVal.name}} from {{parentVal.city}}</p> -->
+</div>
+<mat-divider></mat-divider>
+<h2>Pipe in angular</h2>
+<p>{{pipeName | uppercase}}</p>
+<p>{{todayDate | date:"fullDate"}}</p>
+<p>{{str}}</p>
+<p>{{str | slice :2:5}}</p>
+<p>{{currencyVal | currency : 'USD'}}</p>
+<mat-divider></mat-divider>
+<h2>Custom Directives Examples in angular</h2>
+<h4>Normal directives</h4>
+<h4 appCustomStyle>Custom directives</h4>
+<mat-divider></mat-divider>
+<h2>Service example</h2>
+<h4>{{userdata}}</h4>
+
+
+
+</div>
